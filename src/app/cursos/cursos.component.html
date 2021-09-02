@@ -1,0 +1,33 @@
+<p>Lista de Cursos do Portal {{nomePortal}}</p>
+<ul>
+  <article>
+    <li *ngFor="let curso of cursos">
+      {{ curso }}
+      <app-curso-detalhe></app-curso-detalhe>
+    </li>
+  </article>
+  <article>
+    <h3>Teste combobox</h3>
+    <div>
+      <select #classe (change)="mostraSelecionado()" [(ngModel)]="selectedCurso">
+        <option *ngFor="let curso of cursos" [value]="curso">{{curso}}</option>
+        <!--        <option value="alert-success">Sucesso</option>-->
+        <!--        <option value="alert-info">Info</option>-->
+        <!--        <option value="alert-warning">Alerta</option>-->
+        <!--        <option value="alert-danger">Erro</option>-->
+      </select>
+    </div>
+    <!--    <div class="alert" role="alert"-->
+    <!--         [class.alert-success]="classe.value == 'alert-success'">Sucesso-->
+    <!--    </div>-->
+    <!--    <div class="alert" role="alert"-->
+    <!--         [class.alert-info]="classe.value == 'alert-info'">Info-->
+    <!--    </div>-->
+    <!--    <div class="alert" role="alert"-->
+    <!--         [class.alert-warning]="classe.value == 'alert-warning'">Alerta-->
+    <!--    </div>-->
+    <!--    <div class="alert alert-danger" role="alert"-->
+    <!--         [class.alert-danger]="classe.value == 'alert-danger'">Erro-->
+    <!--    </div>-->
+  </article>
+</ul>

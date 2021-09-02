@@ -1,0 +1,27 @@
+<section>
+    <article>
+      <h3>Two-way data binding</h3>
+      <div>
+        <!--     Forma de fazer sem usar o Two way data binding - o value do target não existe mais
+                    <input type="text"-->
+        <!--             [value]="nome"-->
+        <!--             (input)="nome = $event.target.value"-->
+        <!--      />-->
+
+        <!--    usando ngModelChange já sabe obter o valor do $event-->
+        <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event"/>
+
+        <!--      agora sim usando o two-way databing-->
+        <input type="text" [(ngModel)]="nome"/>
+
+        <p>Voce Digitou: {{nome}}</p>
+      </div>
+
+  <!--    Two-way data binding de objetos-->
+      <div>
+        <input type="text" [(ngModel)]="pessoa.nome"/>
+        <input type="number" [(ngModel)]="pessoa.idade"/>
+      </div>
+
+    </article>
+</section>
